@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hub</title>
+    <style>
+        :root {
+            --bg: #0d0e11;
+            --card: #16181d;
+            --border: #232730;
+            --text: #e3e6eb;
+            --accent-m: #a78bfa; /* Muted Purple for Movies/Music */
+            --accent-t: #22d3ee; /* Cyan for Tech */
+            --accent-x: #34d399; /* Emerald for Misc */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            padding: 12px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden; /* Strictly enforces no scrolling */
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .header {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-left: 2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .header.movies { color: var(--accent-m); }
+        .header.tech { color: var(--accent-t); }
+        .header.misc { color: var(--accent-x); }
+
+        .header::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: currentColor;
+            opacity: 0.15;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.85rem;
+            font-weight: 500;
+            height: 38px;
+            padding: 0 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn:active {
+            background-color: var(--border);
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MOVIES & MUSIC -->
+    <div class="section">
+        <div class="header movies">Movies & Music</div>
+        <div class="grid">
+            <a href="https://pitchfork.com/" class="btn">Pitchfork</a>
+            <a href="https://www.nme.com/" class="btn">NME</a>
+            <a href="https://www.empireonline.com/" class="btn">Empire</a>
+            <a href="https://variety.com/" class="btn">Variety</a>
+            <a href="https://www.slashfilm.com/" class="btn">/Film</a>
+            <a href="https://www.indiewire.com/" class="btn">IndieWire</a>
+            <a href="https://consequence.net/category/entertainment-news/" class="btn">Consequence</a>
+            <a href="https://www.rollingstone.com/" class="btn">Rolling Stone</a>
+            <a href="https://deadline.com/" class="btn">Deadline</a>
+            <a href="https://www.avclub.com/" class="btn">A.V. Club</a>
+            <a href="https://www.allmusic.com/" class="btn">AllMusic</a>
+        </div>
+    </div>
+
+    <!-- TECH -->
+    <div class="section">
+        <div class="header tech">Tech</div>
+        <div class="grid">
+            <a href="https://www.wired.com/" class="btn">Wired</a>
+            <a href="https://techcrunch.com/" class="btn">TechCrunch</a>
+            <a href="https://arstechnica.com/" class="btn">Ars Technica</a>
+            <a href="https://www.engadget.com/" class="btn">Engadget</a>
+            <a href="https://www.droid-life.com/" class="btn">Droid Life</a>
+            <a href="https://9to5google.com/" class="btn">9to5Google</a>
+            <a href="https://www.gsmarena.com/" class="btn">GSMArena</a>
+            <a href="https://www.androidauthority.com/" class="btn">Android Authority</a>
+            <a href="https://www.theverge.com/" class="btn">The Verge</a>
+        </div>
+    </div>
+
+    <!-- MISC -->
+    <div class="section" style="margin-bottom: auto; margin-top: 4px;">
+        <div class="header misc">Misc</div>
+        <div class="grid">
+            <a href="http://strafe.com/" class="btn">Strafe</a>
+            <a href="https://lolesports.com/en-GB/" class="btn">LoL Esports</a>
+        </div>
+    </div>
+
+</body>
+</html>
