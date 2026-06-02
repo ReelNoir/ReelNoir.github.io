@@ -5,15 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mobile links</title>
     <style>
-        :root {
-            --bg: #0d0e11;
-            --card: #16181d;
-            --border: #232730;
-            --text: #e3e6eb;
-            --accent-m: #a78bfa; /* Muted Purple for Movies/Music */
-            --accent-t: #22d3ee; /* Cyan for Tech */
-            --accent-x: #34d399; /* Emerald for Misc */
-        }
+		:root {
+		    /* Light Theme (Default) */
+		    --bg: #f4f5f7;
+		    --card: #ffffff;
+		    --border: #e4e7eb;
+		    --text: #1f2937;
+		    --accent-m: #6d28d9; /* Deepened purple for contrast */
+		    --accent-t: #0891b2; /* Deepened cyan for contrast */
+		    --accent-x: #059669; /* Deepened emerald for contrast */
+		}
+		
+		@media (prefers-color-scheme: dark) {
+		    :root {
+		        /* Dark Theme (Original Colors) */
+		        --bg: #0d0e11;
+		        --card: #16181d;
+		        --border: #232730;
+		        --text: #e3e6eb;
+		        --accent-m: #a78bfa;
+		        --accent-t: #22d3ee;
+		        --accent-x: #34d399;
+		    }
+		}
 
         * {
             box-sizing: border-box;
