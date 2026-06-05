@@ -91,6 +91,7 @@
         .btn {
             display: flex;
             align-items: center;
+            gap: 8px; /* Spaces the favicon and text */
             background-color: var(--card);
             border: 1px solid var(--border);
             border-radius: 8px;
@@ -100,15 +101,26 @@
             font-weight: 500;
             height: 38px;
             padding: 0 12px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            min-width: 0; /* Keeps grid items from breaking layout on truncation */
             -webkit-tap-highlight-color: transparent;
         }
 
         .btn:active {
             background-color: var(--border);
             transform: scale(0.98);
+        }
+
+        .favicon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0; /* Prevents the icon from squeezing */
+            border-radius: 2px;
+        }
+
+        .btn-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     </style>
 </head>
@@ -117,42 +129,44 @@
     <div class="section">
         <div class="header movies">Movies & Music</div>
         <div class="grid">
-            <a href="https://pitchfork.com/" class="btn">Pitchfork</a>
-            <a href="https://www.nme.com/" class="btn">NME</a>
-            <a href="https://www.empireonline.com/" class="btn">Empire</a>
-            <a href="https://variety.com/" class="btn">Variety</a>
-            <a href="https://www.slashfilm.com/" class="btn">/Film</a>
-            <a href="https://www.indiewire.com/" class="btn">IndieWire</a>
-            <a href="https://consequence.net/category/entertainment-news/" class="btn">Consequence</a>
-            <a href="https://www.rollingstone.com/" class="btn">Rolling Stone</a>
-            <a href="https://deadline.com/" class="btn">Deadline</a>
-            <a href="https://www.avclub.com/latest" class="btn">A.V. Club</a>
-            <a href="https://www.allmusic.com/" class="btn">AllMusic</a>
-            <a href="https://www.releases.com/calendar/movies_vod" class="btn">Releases.com</a>
+            <a href="https://pitchfork.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=pitchfork.com" alt=""><span class="btn-text">Pitchfork</span></a>
+            <a href="https://www.nme.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=nme.com" alt=""><span class="btn-text">NME</span></a>
+            <a href="https://www.empireonline.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=empireonline.com" alt=""><span class="btn-text">Empire</span></a>
+            <a href="https://variety.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=variety.com" alt=""><span class="btn-text">Variety</span></a>
+            <a href="https://www.slashfilm.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=slashfilm.com" alt=""><span class="btn-text">/Film</span></a>
+            <a href="https://www.indiewire.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=indiewire.com" alt=""><span class="btn-text">IndieWire</span></a>
+            <a href="https://consequence.net/category/entertainment-news/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=consequence.net" alt=""><span class="btn-text">Consequence</span></a>
+            <a href="https://www.rollingstone.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=rollingstone.com" alt=""><span class="btn-text">Rolling Stone</span></a>
+            <a href="https://deadline.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=deadline.com" alt=""><span class="btn-text">Deadline</span></a>
+            <a href="https://www.avclub.com/latest" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=avclub.com" alt=""><span class="btn-text">A.V. Club</span></a>
+            <a href="https://www.allmusic.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=allmusic.com" alt=""><span class="btn-text">AllMusic</span></a>
+            <a href="https://www.releases.com/calendar/movies_vod" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=releases.com" alt=""><span class="btn-text">Releases.com</span></a>
         </div>
     </div>
 
     <div class="section">
         <div class="header tech">Tech</div>
         <div class="grid">
-            <a href="https://www.wired.com/" class="btn">Wired</a>
-            <a href="https://techcrunch.com/" class="btn">TechCrunch</a>
-            <a href="https://arstechnica.com/" class="btn">Ars Technica</a>
-            <a href="https://www.engadget.com/" class="btn">Engadget</a>
-            <a href="https://www.droid-life.com/" class="btn">Droid Life</a>
-            <a href="https://9to5google.com/" class="btn">9to5Google</a>
-            <a href="https://www.gsmarena.com/" class="btn">GSMArena</a>
-            <a href="https://www.androidauthority.com/" class="btn">Android Authority</a>
-            <a href="https://www.theverge.com/" class="btn">The Verge</a>
-            <a href="https://www.androidcentral.com/" class="btn">Android Central</a>
+            <a href="https://www.wired.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=wired.com" alt=""><span class="btn-text">Wired</span></a>
+            <a href="https://techcrunch.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=techcrunch.com" alt=""><span class="btn-text">TechCrunch</span></a>
+            <a href="https://arstechnica.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=arstechnica.com" alt=""><span class="btn-text">Ars Technica</span></a>
+            <a href="https://www.engadget.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=engadget.com" alt=""><span class="btn-text">Engadget</span></a>
+            <a href="https://www.droid-life.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=droid-life.com" alt=""><span class="btn-text">Droid Life</span></a>
+            <a href="https://9to5google.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=9to5google.com" alt=""><span class="btn-text">9to5Google</span></a>
+            <a href="https://www.gsmarena.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=gsmarena.com" alt=""><span class="btn-text">GSMArena</span></a>
+            <a href="https://www.androidauthority.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=androidauthority.com" alt=""><span class="btn-text">Android Authority</span></a>
+            <a href="https://www.theverge.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=theverge.com" alt=""><span class="btn-text">The Verge</span></a>
+            <a href="https://www.androidcentral.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=androidcentral.com" alt=""><span class="btn-text">Android Central</span></a>
         </div>
     </div>
 
     <div class="section">
         <div class="header misc">Misc</div>
         <div class="grid">
-            <a href="http://strafe.com/" class="btn">Strafe</a>
-            <a href="https://lolesports.com/en-GB/" class="btn">LoL Esports</a>
+            <a href="http://strafe.com/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=strafe.com" alt=""><span class="btn-text">Strafe</span></a>
+            <a href="https://lolesports.com/en-GB/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=lolesports.com" alt=""><span class="btn-text">LoL Esports</span></a>
+			<a href="https://www.dn.se/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=dn.se" alt=""><span class="btn-text">DN</span></a>
+			<a href="https://www.svt.se/" class="btn"><img class="favicon" src="https://www.google.com/s2/favicons?sz=32&domain=svt.se" alt=""><span class="btn-text">SVT</span></a>
         </div>
     </div>
 
